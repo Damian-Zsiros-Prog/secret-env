@@ -1,0 +1,63 @@
+{
+  "name": "secret-env",
+  "displayName": "Secret Env",
+  "description": "La extensión Secret Env para VS Code proporciona una capa adicional de seguridad al trabajar con variables de entorno. Con esta herramienta, los valores sensibles de tus variables de entorno se ocultan, garantizando la confidencialidad de información crucial. Simplifica el desarrollo al permitirte manejar de manera segura información delicada, como claves API o tokens, sin comprometer la seguridad de tu proyecto. Asegura un entorno de desarrollo más protegido y evita exposiciones no deseadas de información confidencial.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "secret-env.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "secret-env.hide-env-variables",
+        "title": "Ocultar variables de entorno"
+      },
+      {
+        "command": "secret-env.show-env-variables",
+        "title": "Mostrar variables de entorno"
+      }
+    ]
+  },
+  "capabilities": {
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
