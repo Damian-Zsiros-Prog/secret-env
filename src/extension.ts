@@ -5,12 +5,48 @@ dotenv.config();
 
 export function activate(context: vscode.ExtensionContext) {
   let originalContent: { [key: string]: string } = {};
-  let disposable = vscode.commands.registerCommand(
-    "secret-env.helloWorld",
-    () => {
-      vscode.window.showInformationMessage("Hello World from Secret Env!");
+
+  vscode.workspace.onDidChangeWorkspaceFolders(async (e) => {
+    for (const folder of e.added) {
+      const envFiles = await vscode.workspace.findFiles(
+        new vscode.RelativePattern(folder, "**/*.env"),
+        null,
+        100
+      );
+      for (const file of envFiles) {
+        const document = await vscode.workspace.openTextDocument(file);
+        const fileContent = document.getText();
+        originalContent[document.fileName] = fileContent;
+        const maskedContent = fileContent.replace(/=.*/g, "=*");
+        const fullRange = new vscode.Range(
+          document.positionAt(0),
+          document.positionAt(fileContent.length)
+        );
+        const textEditor = await vscode.window.showTextDocument(document);
+        textEditor.edit((editBuilder) => {
+          editBuilder.replace(fullRange, maskedContent);
+        });
+      }
     }
-  );
+  });
+
+  // Registra el evento onDidOpenTextDocument
+  vscode.workspace.onDidOpenTextDocument(async (document) => {
+    if (document.fileName.endsWith(".env")) {
+      const fileContent = document.getText();
+      originalContent[document.fileName] = fileContent;
+      const maskedContent = fileContent.replace(/=.*/g, "=*");
+      const fullRange = new vscode.Range(
+        document.positionAt(0),
+        document.positionAt(fileContent.length)
+      );
+      const textEditor = await vscode.window.showTextDocument(document);
+      textEditor.edit((editBuilder) => {
+        editBuilder.replace(fullRange, maskedContent);
+      });
+    }
+  });
+
   let hideEnvVariables = vscode.commands.registerCommand(
     "secret-env.hide-env-variables",
     async () => {
@@ -61,7 +97,6 @@ export function activate(context: vscode.ExtensionContext) {
       }
     }
   );
-  context.subscriptions.push(disposable);
   context.subscriptions.push(hideEnvVariables);
   context.subscriptions.push(showEnvVariables);
 }
