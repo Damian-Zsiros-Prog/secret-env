@@ -1,7 +1,4 @@
 import * as vscode from "vscode";
-import * as dotenv from "dotenv";
-
-dotenv.config();
 
 export function activate(context: vscode.ExtensionContext) {
   let originalContent: { [key: string]: string } = {};
