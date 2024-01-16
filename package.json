@@ -2,7 +2,8 @@
   "name": "secret-env",
   "displayName": "Secret Env",
   "description": "La extensión Secret Env para VS Code proporciona una capa adicional de seguridad al trabajar con variables de entorno. Con esta herramienta, los valores sensibles de tus variables de entorno se ocultan, garantizando la confidencialidad de información crucial. Simplifica el desarrollo al permitirte manejar de manera segura información delicada, como claves API o tokens, sin comprometer la seguridad de tu proyecto. Asegura un entorno de desarrollo más protegido y evita exposiciones no deseadas de información confidencial.",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "icon": "https://irongeek.gallerycdn.vsassets.io/extensions/irongeek/vscode-env/0.1.0/1602639667760/Microsoft.VisualStudio.Services.Icons.Default",
   "engines": {
     "vscode": "^1.85.0"
   },
