@@ -2,7 +2,6 @@ import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
   let originalContent: { [key: string]: string } = {};
-
   vscode.workspace.onDidChangeWorkspaceFolders(async (e) => {
     for (const folder of e.added) {
       const envFiles = await vscode.workspace.findFiles(
