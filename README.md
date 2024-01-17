@@ -21,7 +21,8 @@ La extensión "Secret Env" tiene los siguientes requisitos:
 Esta extensión contribuye con las siguientes configuraciones:
 
 - `secret-env.enable`: Habilita/deshabilita esta extensión.
-- `secret-env.thing`: Configúralo como `blah` para realizar ciertas acciones.
+- `secret-env.hide-env-variables`: Oculta los valores de las variables de entorno.
+- `secret-env.show-env-variables`: Muestra los valores de las variables de entorno.
 
 ## Problemas Conocidos
 
@@ -29,7 +30,7 @@ Actualmente no hay problemas conocidos. Si encuentras alguno, por favor, repórt
 
 ## Notas de la Versión
 
-### 0.1.0
+### 0.1.3
 
 - Lanzamiento inicial de la extensión "Secret Env".
 
