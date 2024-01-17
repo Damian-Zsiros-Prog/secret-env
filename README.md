@@ -1,71 +1,38 @@
-# secret-env README
+# Secret Env - Documentación
 
-This is the README for your extension "secret-env". After writing up a brief description, we recommend including the following sections.
+Esta es la documentación para tu extensión "Secret Env" de Visual Studio Code. Proporciona una capa adicional de seguridad al trabajar con variables de entorno. Los valores sensibles de tus variables de entorno se ocultan, garantizando la confidencialidad de información crucial. Simplifica el desarrollo al permitirte manejar de manera segura información delicada, como claves API o tokens, sin comprometer la seguridad de tu proyecto. Asegura un entorno de desarrollo más protegido y evita exposiciones no deseadas de información confidencial.
 
-## Features
+## Características
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+La extensión "Secret Env" ofrece las siguientes características:
 
-For example if there is an image subfolder under your extension project workspace:
+Esta extension permite ocultar variables de entorno sensibles, garantizando que la información confidencial permanezca segura.
 
-\!\[feature X\]\(images/feature-x.png\)
+Con esta funcionalidad, puedes mostrar variables de entorno ocultas según sea necesario para facilitar el desarrollo y la depuración.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Requisitos
 
-## Requirements
+La extensión "Secret Env" tiene los siguientes requisitos:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code versión 1.85.0 o superior.
 
-## Extension Settings
+## Configuración de la Extensión
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Esta extensión contribuye con las siguientes configuraciones:
 
-For example:
+- `secret-env.enable`: Habilita/deshabilita esta extensión.
+- `secret-env.thing`: Configúralo como `blah` para realizar ciertas acciones.
 
-This extension contributes the following settings:
+## Problemas Conocidos
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Actualmente no hay problemas conocidos. Si encuentras alguno, por favor, repórtalo para mejorar la extensión.
 
-## Known Issues
+## Notas de la Versión
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### 0.1.0
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Lanzamiento inicial de la extensión "Secret Env".
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**¡Disfruta de una experiencia de desarrollo más segura con Secret Env!**
