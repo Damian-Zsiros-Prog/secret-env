@@ -44,11 +44,11 @@
   "keybindings": [
     {
       "command": "secret-env.hide-env-variables",
-      "key": "shift+alt+h"
+      "key": "ctrl+alt+h"
     },
     {
       "command": "secret-env.show-env-variables",
-      "key": "shift+alt+s"
+      "key": "ctrl+alt+s"
     }
   ],
   "devDependencies": {
